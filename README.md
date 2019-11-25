@@ -77,7 +77,8 @@ git clone https://github.com/sipa/minisketch
 cd minisketch
 ./autogen.sh
 ./configure
-./make
+make
+sudo make install
 ```
 
 ## Usage
@@ -158,7 +159,7 @@ After Bob receives Alice's serialized sketch, he can reconcile:
 In this example Bob would see output such as:
 
 ```
-$ gcc -std=c99 -Wall -Wextra -o example ./doc/example.c -Lsrc/ -lminisketch -lstdc++ && ./example
+$ gcc -std=c99 -Wall -Wextra -o example -Lsrc/ -Wl,-rpath /usr/local/lib -lminisketch -lstdc++ ./doc/example.c
 3000 is in only one of the two sets
 3011 is in only one of the two sets
 3001 is in only one of the two sets
