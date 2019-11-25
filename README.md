@@ -70,12 +70,14 @@ Below we compare the PinSketch algorithm (which `libminisketch` is an implementa
 
 The build system is very rudimentary for now, and [improvements](https://github.com/sipa/minisketch/pulls) are welcome.
 
-The following may work and produce a `libminisketch.a` file you can link against:
+The following may work and produce a `libminisketch.a` file you can link against, make sure automake is installed on your system:
 
 ```bash
 git clone https://github.com/sipa/minisketch
-cd minisketch/src
-make
+cd minisketch
+./autogen.sh
+./configure
+./make
 ```
 
 ## Usage
